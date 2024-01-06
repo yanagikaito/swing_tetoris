@@ -11,6 +11,14 @@ object Main {
 
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE)
 
+        window.isResizable = false
+
+        val gamePanel = GamePanel()
+
+        window.add(gamePanel)
+
+        window.pack()
+
         window.setLocationRelativeTo(null)
 
         // ウィンドウを画面上に表示します。
