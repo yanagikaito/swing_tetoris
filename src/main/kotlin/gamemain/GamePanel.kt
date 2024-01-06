@@ -23,7 +23,14 @@ class GamePanel : JPanel(), Runnable {
         this.layout = null
     }
 
+    fun gameStart() {
+
+        gameThread = Thread(this)
+
+        gameThread.start()
+    }
+
     override fun run() {
-        TODO("Not yet implemented")
+
     }
 }
