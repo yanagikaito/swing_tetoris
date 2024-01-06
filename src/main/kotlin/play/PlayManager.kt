@@ -1,6 +1,7 @@
 package play
 
 import gamemain.GamePanel
+import java.awt.Graphics2D
 
 class PlayManager(private var gamePanel: GamePanel) {
 
@@ -27,5 +28,15 @@ class PlayManager(private var gamePanel: GamePanel) {
         topY = 50
 
         bottomY = topY + mainHeight
+    }
+
+    fun update() {
+
+
+    }
+
+    fun draw(graphics2D: Graphics2D) {
+
+
     }
 }
