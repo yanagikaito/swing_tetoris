@@ -1,8 +1,10 @@
 package gamemain
 
+import play.PlayManager
 import java.awt.Color
 import java.awt.Dimension
 import java.awt.Graphics
+import java.awt.Graphics2D
 import javax.swing.JPanel
 
 class GamePanel : JPanel(), Runnable {
@@ -15,6 +17,8 @@ class GamePanel : JPanel(), Runnable {
 
     private lateinit var gameThread: Thread
 
+    private var playManager: PlayManager
+
     init {
 
         this.preferredSize = Dimension(width, height)
@@ -22,6 +26,8 @@ class GamePanel : JPanel(), Runnable {
         this.background = Color.BLACK
 
         this.layout = null
+
+        playManager = PlayManager(this)
     }
 
     fun gameStart() {
@@ -86,10 +92,16 @@ class GamePanel : JPanel(), Runnable {
 
     private fun update() {
 
+        playManager.update()
+
     }
 
     override fun paintComponent(graphics: Graphics) {
 
         super.paintComponent(graphics)
+
+        val graphics2D = graphics as Graphics2D
+
+        playManager.draw(graphics2D)
     }
 }
