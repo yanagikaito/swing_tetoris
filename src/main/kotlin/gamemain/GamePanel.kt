@@ -104,4 +104,14 @@ class GamePanel : JPanel(), Runnable {
 
         playManager.draw(graphics2D)
     }
+
+    override fun getWidth(): Int {
+
+        return width
+    }
+
+    override fun getHeight(): Int {
+
+        return height
+    }
 }

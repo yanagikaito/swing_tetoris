@@ -1,6 +1,8 @@
 package play
 
 import gamemain.GamePanel
+import java.awt.BasicStroke
+import java.awt.Color
 import java.awt.Graphics2D
 
 class PlayManager(private var gamePanel: GamePanel) {
@@ -23,11 +25,11 @@ class PlayManager(private var gamePanel: GamePanel) {
 
         leftX = (gamePanel.width / 2) - (mainWidth / 2)
 
-        rightX = leftX + mainWidth
+        rightX = leftX + gamePanel.width
 
         topY = 50
 
-        bottomY = topY + mainHeight
+        bottomY = topY + gamePanel.height
     }
 
     fun update() {
@@ -37,6 +39,10 @@ class PlayManager(private var gamePanel: GamePanel) {
 
     fun draw(graphics2D: Graphics2D) {
 
+        graphics2D.color = Color.WHITE
 
+        graphics2D.stroke = BasicStroke(4f)
+
+        graphics2D.drawRect(leftX - 4, topY - 4, mainWidth + 8, mainHeight + 8)
     }
 }
