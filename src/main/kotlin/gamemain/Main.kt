@@ -1,0 +1,5 @@
+package gamemain
+
+class Main {
+
+}
