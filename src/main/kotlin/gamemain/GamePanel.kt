@@ -2,6 +2,7 @@ package gamemain
 
 import java.awt.Color
 import java.awt.Dimension
+import java.awt.Graphics
 import javax.swing.JPanel
 
 class GamePanel : JPanel(), Runnable {
@@ -83,7 +84,12 @@ class GamePanel : JPanel(), Runnable {
         }
     }
 
-    fun update() {
+    private fun update() {
 
+    }
+
+    private fun paintComponet(graphics: Graphics) {
+
+        super.paintComponent(graphics)
     }
 }
