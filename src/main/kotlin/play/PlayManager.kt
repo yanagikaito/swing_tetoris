@@ -1,16 +1,31 @@
 package play
 
-class PlayManager {
+import gamemain.GamePanel
 
-    private val width = 360
+class PlayManager(private var gamePanel: GamePanel) {
 
-    private val height = 600
+    private val mainWidth = 360
 
-    private val leftX: Int = 0
+    private val mainHeight = 600
 
-    private val rightX: Int = 0
+    private var leftX: Int = 0
 
-    private val topY: Int = 0
+    private var rightX: Int = 0
 
-    private val bottomY: Int = 0
+    private var topY: Int = 0
+
+    private var bottomY: Int = 0
+
+    init {
+
+        this.gamePanel = gamePanel
+
+        leftX = (gamePanel.width / 2) - (mainWidth / 2)
+
+        rightX = leftX + mainWidth
+
+        topY = 50
+
+        bottomY = topY + mainHeight
+    }
 }
