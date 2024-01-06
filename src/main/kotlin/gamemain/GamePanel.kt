@@ -88,7 +88,7 @@ class GamePanel : JPanel(), Runnable {
 
     }
 
-    private fun paintComponet(graphics: Graphics) {
+    override fun paintComponent(graphics: Graphics) {
 
         super.paintComponent(graphics)
     }
