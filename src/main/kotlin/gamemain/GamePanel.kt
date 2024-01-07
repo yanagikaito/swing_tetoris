@@ -17,7 +17,7 @@ class GamePanel : JPanel(), Runnable {
 
     private lateinit var gameThread: Thread
 
-    private var playManager: PlayManager
+    private lateinit var playManager: PlayManager
 
     init {
 

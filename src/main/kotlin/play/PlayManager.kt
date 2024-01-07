@@ -3,7 +3,9 @@ package play
 import gamemain.GamePanel
 import java.awt.BasicStroke
 import java.awt.Color
+import java.awt.Font
 import java.awt.Graphics2D
+import java.awt.RenderingHints
 
 class PlayManager(private var gamePanel: GamePanel) {
 
@@ -32,7 +34,7 @@ class PlayManager(private var gamePanel: GamePanel) {
         bottomY = topY + gamePanel.height
     }
 
-    fun update() {
+    fun update(): Unit {
 
 
     }
@@ -44,5 +46,17 @@ class PlayManager(private var gamePanel: GamePanel) {
         graphics2D.stroke = BasicStroke(4f)
 
         graphics2D.drawRect(leftX - 4, topY - 4, mainWidth + 8, mainHeight + 8)
+
+        val x: Int = rightX + 100
+
+        val y: Int = bottomY - 200
+
+        graphics2D.drawRect(x, y, 200, 200)
+
+        graphics2D.font = Font("アリアル", Font.PLAIN, 30)
+
+        graphics2D.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON)
+
+        graphics2D.drawString("NEXT", rightX + 60, bottomY + 60)
     }
 }
