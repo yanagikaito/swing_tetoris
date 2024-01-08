@@ -1,0 +1,4 @@
+package mino
+
+class MinoSquare {
+}
