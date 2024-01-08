@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b70df621-fe6b-4855-beec-580307ccabad" name="変更" comment="" />
+    <list default="true" id="b70df621-fe6b-4855-beec-580307ccabad" name="変更" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/mino/Block.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/mino/Block.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/mino/Mino.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/mino/Mino.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/mino/MinoL1.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/mino/MinoL1.kt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,6 +46,11 @@
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\meteo\IdeaProjects\Kotlin_tetoris\src\main\kotlin\mino" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="アプリケーションレベル" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="デフォルトタスク">
