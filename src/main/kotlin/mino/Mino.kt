@@ -1,6 +1,7 @@
 package mino
 
 import java.awt.Color
+import java.awt.Graphics2D
 
 class Mino {
 
@@ -27,5 +28,20 @@ class Mino {
         tempB[2] = Block(c)
 
         tempB[3] = Block(c)
+    }
+
+    fun setXY(x: Int, y: Int) {
+
+
+    }
+
+    fun updateXY(direction: Int) {
+
+
+    }
+
+    fun draw(graphics2D: Graphics2D) {
+
+
     }
 }
