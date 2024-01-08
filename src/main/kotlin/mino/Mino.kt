@@ -3,34 +3,34 @@ package mino
 import java.awt.Color
 import java.awt.Graphics2D
 
-class Mino {
+open class Mino {
 
-    private val b: Array<Block> = Array(4) { Block(c = Color.BLACK) }
+    private var b: Array<Block> = Array(5) { Block(color = Color.RED) }
 
-    private val tempB: Array<Block> = Array(4) { Block(c = Color.WHITE) }
+    private val tempB: Array<Block> = Array(5) { Block(color = Color.WHITE) }
 
-    fun create(c: Color) {
+    fun create(color: Color) {
 
-        b[0] = Block(c)
+        b[0] = Block(color)
 
-        b[1] = Block(c)
+        b[1] = Block(color)
 
-        b[2] = Block(c)
+        b[2] = Block(color)
 
-        b[3] = Block(c)
+        b[3] = Block(color)
 
-        b[4] = Block(c)
+        b[4] = Block(color)
 
-        tempB[0] = Block(c)
+        tempB[0] = Block(color)
 
-        tempB[1] = Block(c)
+        tempB[1] = Block(color)
 
-        tempB[2] = Block(c)
+        tempB[2] = Block(color)
 
-        tempB[3] = Block(c)
+        tempB[3] = Block(color)
     }
 
-    fun setXY(x: Int, y: Int) {
+    open fun setXY(x: Int, y: Int) {
 
 
     }
@@ -43,5 +43,15 @@ class Mino {
     fun draw(graphics2D: Graphics2D) {
 
 
+    }
+
+    fun getB(): Array<Block> {
+
+        return b
+    }
+
+    fun setB(b: Array<Block>) {
+
+        this.b = b
     }
 }
