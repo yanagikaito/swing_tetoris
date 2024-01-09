@@ -18,6 +18,12 @@ class MinoL1(private var block: Block) : Mino() {
 
     override fun setXY(x: Int, y: Int) {
 
+        /*    y
+        *     o
+        * x   o
+        *     o o
+         */
+
         getB()[0].x = x
 
         getB()[1].y = y

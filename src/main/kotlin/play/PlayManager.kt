@@ -1,6 +1,7 @@
 package play
 
 import gamemain.GamePanel
+import mino.Mino
 import java.awt.BasicStroke
 import java.awt.Color
 import java.awt.Font
@@ -20,6 +21,12 @@ class PlayManager(private var gamePanel: GamePanel) {
     private var topY: Int = 0
 
     private var bottomY: Int = 0
+
+    private lateinit var currentMino: Mino
+
+    private var minoStartx: Int = 0
+
+    private var minoStarty: Int = 0
 
     init {
 
