@@ -6,9 +6,9 @@ import java.awt.Rectangle
 
 class Block(private var color: Color) : Rectangle() {
 
-    private val x: Int = 0
+    var blockX: Int = 0
 
-    private val y: Int = 0
+    var blockY: Int = 0
 
     private var blockSize: Int = 30
 
