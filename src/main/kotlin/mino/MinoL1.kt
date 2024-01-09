@@ -8,7 +8,7 @@ private val Block.blockSize: Any
         return 30
     }
 
-class MinoL1(private var block: Block) : Mino() {
+class MinoL1(private var block: Block) : Mino(block) {
 
     init {
 

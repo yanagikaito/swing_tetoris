@@ -3,11 +3,22 @@ package mino
 import java.awt.Color
 import java.awt.Graphics2D
 
-open class Mino {
+private val Block.blockSize: Int
+    get() {
+
+        return 30
+    }
+
+open class Mino(private var block: Block) {
 
     private var b: Array<Block> = Array(5) { Block(color = Color.RED) }
 
-    private val tempB: Array<Block> = Array(5) { Block(color = Color.WHITE) }
+    private val tempB: Array<Block> = Array(5) { Block(color = Color.ORANGE) }
+
+    init {
+
+        this.block = block
+    }
 
     fun create(color: Color) {
 
@@ -35,14 +46,22 @@ open class Mino {
 
     }
 
-    fun updateXY(direction: Int) {
+    fun updateXY() {
 
 
     }
 
     fun draw(graphics2D: Graphics2D) {
 
+        graphics2D.color = b[0].color
 
+        graphics2D.fillRect(b[0].blockX, b[0].blockY, block.blockSize, block.blockSize)
+
+        graphics2D.fillRect(b[1].blockX, b[1].blockY, block.blockSize, block.blockSize)
+
+        graphics2D.fillRect(b[2].blockX, b[2].blockY, block.blockSize, block.blockSize)
+
+        graphics2D.fillRect(b[3].blockX, b[3].blockY, block.blockSize, block.blockSize)
     }
 
     fun getB(): Array<Block> {

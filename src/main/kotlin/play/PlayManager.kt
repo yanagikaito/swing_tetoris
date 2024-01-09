@@ -9,6 +9,7 @@ import java.awt.Color
 import java.awt.Font
 import java.awt.Graphics2D
 import java.awt.RenderingHints
+import kotlin.properties.Delegates
 
 private val blockSize: Any
     get() {
@@ -32,9 +33,9 @@ class PlayManager(private var gamePanel: GamePanel) {
 
     private lateinit var currentMino: Mino
 
-    private var minoStartX: Int = 0
+    private var minoStartX by Delegates.notNull<Int>()
 
-    private var minoStartY: Int = 0
+    private var minoStartY by Delegates.notNull<Int>()
 
     init {
 
@@ -59,6 +60,7 @@ class PlayManager(private var gamePanel: GamePanel) {
 
     fun update(): Unit {
 
+        currentMino.updateXY()
 
     }
 
@@ -81,6 +83,11 @@ class PlayManager(private var gamePanel: GamePanel) {
         graphics2D.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON)
 
         graphics2D.drawString("NEXT", rightX + 60, bottomY + 60)
+
+        if (currentMino != null) {
+
+            currentMino.draw(graphics2D)
+        }
     }
 }
 
