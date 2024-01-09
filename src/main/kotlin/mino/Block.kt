@@ -4,7 +4,7 @@ import java.awt.Color
 import java.awt.Graphics2D
 import java.awt.Rectangle
 
-class Block(private var color: Color) : Rectangle() {
+class Block(var color: Color) : Rectangle() {
 
     var blockX: Int = 0
 
