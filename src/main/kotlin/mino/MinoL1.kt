@@ -2,17 +2,9 @@ package mino
 
 import java.awt.Color
 
-private val Block.blockSize: Any
-    get() {
-
-        return 30
-    }
-
-class MinoL1(private var block: Block) : Mino(block) {
+class MinoL1() : Mino() {
 
     init {
-
-        this.block = block
 
         create(Color.orange)
     }
@@ -31,25 +23,15 @@ class MinoL1(private var block: Block) : Mino(block) {
 
         getB()[1].blockX = getB()[0].x
 
-        getB()[1].blockY = getB()[0].y - block.blockSize
+        getB()[1].blockY = getB()[0].y - Block.SIZE
 
         getB()[2].blockX = getB()[0].x
 
-        getB()[2].blockY = getB()[0].y + block.blockSize
+        getB()[2].blockY = getB()[0].y + Block.SIZE
 
-        getB()[3].blockX = getB()[0].x + block.blockSize
+        getB()[3].blockX = getB()[0].x + Block.SIZE
 
-        getB()[3].blockY = getB()[0].y + block.blockSize
+        getB()[3].blockY = getB()[0].y + Block.SIZE
     }
-}
-
-private operator fun Int.minus(blockSize: Any): Int {
-
-    return blockSize as Int
-}
-
-private operator fun Int.plus(blockSize: Any): Int {
-
-    return blockSize as Int
 }
 

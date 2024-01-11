@@ -3,22 +3,12 @@ package mino
 import java.awt.Color
 import java.awt.Graphics2D
 
-private val Block.blockSize: Int
-    get() {
+open class Mino {
 
-        return 30
-    }
+    private var b: Array<Block> = Array(5) { Block(Color.ORANGE) }
 
-open class Mino(private var block: Block) {
+    private val tempB: Array<Block> = Array(5) { Block(Color.ORANGE) }
 
-    private var b: Array<Block> = Array(5) { Block(color = Color.RED) }
-
-    private val tempB: Array<Block> = Array(5) { Block(color = Color.ORANGE) }
-
-    init {
-
-        this.block = block
-    }
 
     fun create(color: Color) {
 
@@ -55,13 +45,13 @@ open class Mino(private var block: Block) {
 
         graphics2D.color = b[0].color
 
-        graphics2D.fillRect(b[0].blockX, b[0].blockY, block.blockSize, block.blockSize)
+        graphics2D.fillRect(b[0].blockX, b[0].blockY, Block.SIZE, Block.SIZE)
 
-        graphics2D.fillRect(b[1].blockX, b[1].blockY, block.blockSize, block.blockSize)
+        graphics2D.fillRect(b[1].blockX, b[1].blockY, Block.SIZE, Block.SIZE)
 
-        graphics2D.fillRect(b[2].blockX, b[2].blockY, block.blockSize, block.blockSize)
+        graphics2D.fillRect(b[2].blockX, b[2].blockY, Block.SIZE, Block.SIZE)
 
-        graphics2D.fillRect(b[3].blockX, b[3].blockY, block.blockSize, block.blockSize)
+        graphics2D.fillRect(b[3].blockX, b[3].blockY, Block.SIZE, Block.SIZE)
     }
 
     fun getB(): Array<Block> {
