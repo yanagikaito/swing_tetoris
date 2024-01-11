@@ -8,10 +8,12 @@ import java.awt.Graphics2D
 import javax.swing.JPanel
 
 class GamePanel : JPanel(), Runnable {
+    companion object {
 
-    private val width: Int = 1280
+        const val WIDTH: Int = 1280
 
-    private val height: Int = 720
+        const val HEIGHT: Int = 720
+    }
 
     private val fps: Int = 60
 
@@ -21,13 +23,13 @@ class GamePanel : JPanel(), Runnable {
 
     init {
 
-        this.preferredSize = Dimension(width, height)
+        this.preferredSize = Dimension(WIDTH, HEIGHT)
 
         this.background = Color.BLACK
 
         this.layout = null
 
-        playManager = PlayManager(this)
+        playManager = PlayManager()
     }
 
     fun gameStart() {
@@ -103,15 +105,5 @@ class GamePanel : JPanel(), Runnable {
         val graphics2D = graphics as Graphics2D
 
         playManager.draw(graphics2D)
-    }
-
-    override fun getWidth(): Int {
-
-        return width
-    }
-
-    override fun getHeight(): Int {
-
-        return height
     }
 }

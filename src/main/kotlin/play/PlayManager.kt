@@ -9,53 +9,47 @@ import java.awt.Color
 import java.awt.Font
 import java.awt.Graphics2D
 import java.awt.RenderingHints
-import kotlin.properties.Delegates
 
-private val blockSize: Any
-    get() {
+class PlayManager {
+    companion object {
 
-        return 30
+        private var leftX: Int = 0
+
+        private var rightX: Int = 0
+
+        private var topY: Int = 0
+
+        private var bottomY: Int = 0
+
+        private var MINO_START_X = 0
+
+        private var MINO_START_Y = 0
+
     }
-
-class PlayManager(private var gamePanel: GamePanel) {
 
     private val mainWidth = 360
 
     private val mainHeight = 600
 
-    private var leftX: Int = 0
-
-    private var rightX: Int = 0
-
-    private var topY: Int = 0
-
-    private var bottomY: Int = 0
-
     private lateinit var currentMino: Mino
-
-    private var minoStartX by Delegates.notNull<Int>()
-
-    private var minoStartY by Delegates.notNull<Int>()
 
     init {
 
-        this.gamePanel = gamePanel
+        leftX = (GamePanel.WIDTH / 2) - (mainWidth / 2)
 
-        leftX = (gamePanel.width / 2) - (mainWidth / 2)
-
-        rightX = leftX + gamePanel.width
+        rightX = leftX + GamePanel.WIDTH
 
         topY = 50
 
-        bottomY = topY + gamePanel.height
+        bottomY = topY + GamePanel.HEIGHT
 
-        minoStartX = leftX + (mainWidth / 2) - blockSize
+        MINO_START_X = leftX + (mainWidth / 2) - Block.SIZE
 
-        minoStartY = topY + blockSize
+        MINO_START_Y = topY + Block.SIZE
 
-        currentMino = MinoL1(block = Block(color = Color.ORANGE))
+        currentMino = MinoL1()
 
-        currentMino.setXY(minoStartX, minoStartY)
+        currentMino.setXY(MINO_START_X, MINO_START_Y)
     }
 
     fun update(): Unit {
@@ -89,14 +83,4 @@ class PlayManager(private var gamePanel: GamePanel) {
             currentMino.draw(graphics2D)
         }
     }
-}
-
-private operator fun Int.plus(blockSize: Any): Int {
-
-    return blockSize as Int
-}
-
-private operator fun Int.minus(blockSize: Any): Int {
-
-    return blockSize as Int
 }
